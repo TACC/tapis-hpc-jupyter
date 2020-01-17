@@ -1,0 +1,46 @@
+{
+  "name": "[USERNAME]-tacc.prod-tapis-hpc-jupyter",
+  "version": "1.0",
+  "label": "[USERNAME]'s Frontera Jupyter HPC app",
+  "shortDescription": "[USERNAME]'s Frontera Jupyter HPC app",
+  "longDescription": "",
+  "tags": [],
+  "deploymentSystem": "[USERNAME].frontera.jupyter.storage",
+  "deploymentPath": "/work/05747/cicsvc/frontera/public/tapis-hpc-jupyter",
+  "templatePath": "wrapper.sh",
+  "testPath": "test/test.sh",
+  "executionSystem": "[USERNAME].frontera.jupyter.execution",
+  "executionType": "HPC",
+  "helpURI": "",
+  "parallelism": "SERIAL",
+  "inputs": [],
+   "parameters": [
+       {
+
+           "id": "email",
+           "value": {
+               "visible": true,
+               "required": true,
+               "type": "string",
+               "order": 0,
+               "enquote": false,
+               "validator": null
+           },
+           "details": {
+               "label": "User email",
+               "description": "User email",
+               "argument": "",
+               "showArgument": false,
+               "repeatArgument": false
+           },
+               "semantics": {
+               "minCardinality": 1,
+               "maxCardinality": 1,
+               "ontology": []
+           }
+    }
+],
+"outputs": []
+
+}
+

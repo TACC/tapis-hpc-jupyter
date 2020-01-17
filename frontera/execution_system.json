@@ -1,0 +1,51 @@
+{
+  "id": "[USERNAME].frontera.jupyter.execution",
+  "name": "[USERNAME]'s Frontera Jupyter execution system",
+  "status": "UP",
+  "type": "EXECUTION",
+  "description": "[USERNAME]'s Frontera Jupyter execution system",
+  "site": "tacc.cloud",
+  "executionType": "HPC",
+  "scratchDir": "/home1/05747/[USERNAME]/scratch",
+  "workDir": "/home1/05747/[USERNAME]/work",
+  "login": {
+    "host": "frontera.tacc.utexas.edu",
+    "port": 22,
+    "protocol": "SSH",
+    "auth": {
+      "username": "[USERNAME]",
+      "password":"[PASSWORD]",
+      "type": "PASSWORD"
+    }
+  },
+  "storage": {
+    "host": "frontera.tacc.utexas.edu",
+    "port": 22,
+    "protocol": "SFTP",
+    "rootDir": "/",
+    "homeDir": "/work/05747/cicsvc/frontera/public/tapis-hpc-jupyter",
+     "auth": {
+      "username": "[USERNAME]",
+      "password":"[PASSWORD]",
+      "type": "PASSWORD"
+    }
+  },
+  "maxSystemJobs": 100,
+  "maxSystemJobsPerUser": 10,
+  "scheduler": "SLURM",
+  "queues": [
+    {
+      "name": "normal",
+      "maxJobs": 1,
+      "maxUserJobs": 1,
+      "maxNodes": 1,
+      "maxMemoryPerNode": "2GB",
+      "maxProcessorsPerNode": 4,
+      "maxRequestedTime": "24:00:00",
+      "customDirectives": "-A [ALLOCATION]",
+      "default": true
+    }
+  ],
+  "environment": "",
+  "startupScript": null
+}

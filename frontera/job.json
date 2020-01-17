@@ -1,0 +1,9 @@
+{
+  "name":"[USERNAME]-tacc.prod-tapis-hpc-jupyter-job",
+  "appId":"[USERNAME]-tacc.prod-tapis-hpc-jupyter-1.0",
+  "archive":false,
+  "memoryPerNode":"1",
+  "parameters": {
+         "email":"[EMAIL ADDRESS]"
+    }
+}

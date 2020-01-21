@@ -6,8 +6,8 @@
   "description": "[USERNAME]'s Frontera Jupyter execution system",
   "site": "tacc.cloud",
   "executionType": "HPC",
-  "scratchDir": "/home1/05747/[USERNAME]/scratch",
-  "workDir": "/home1/05747/[USERNAME]/work",
+  "scratchDir": "/home1/[05747]/[USERNAME]/scratch",
+  "workDir": "/home1/[05747]/[USERNAME]/work",
   "login": {
     "host": "frontera.tacc.utexas.edu",
     "port": 22,

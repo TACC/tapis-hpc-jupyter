@@ -39,8 +39,8 @@
       "maxJobs": 1,
       "maxUserJobs": 1,
       "maxNodes": 1,
-      "maxMemoryPerNode": "2GB",
-      "maxProcessorsPerNode": 4,
+      "maxMemoryPerNode": "192GB",
+      "maxProcessorsPerNode": 56,
       "maxRequestedTime": "24:00:00",
       "customDirectives": "-A [ALLOCATION]",
       "default": true

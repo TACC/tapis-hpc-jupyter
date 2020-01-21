@@ -12,7 +12,7 @@ NOTE:
 - Modify each definition below by replacing sections with [...] with relevant information
     - NOTE: When modifying `/home1/[05747]/[USERNAME]/work`, be sure to update the number after `/home1/` to the one matching your account
 - POST each definition to Tapis
-- Once deployed, an email will be sent to the email defined in the [job.json](/frontera/job.json)
+- Once deployed, an email will be sent to the email defined in the [job.json.](/frontera/job.json) Multiple emails can be sent by putting spaces between each address. 
 
 ### Storage System
 ```curl -sk -H "Authorization: Bearer $ACCESS_TOKEN" -F "fileToUpload=@storage_system.json" https://api.tacc.utexas.edu/systems/v2```

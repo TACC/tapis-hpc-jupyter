@@ -2,7 +2,7 @@
 Jupyter notebook Tapis apps for TACC HPCs
 
 NOTE:
-> This implementation is designed use hosted singularity images in the CIC service account's Stockyard allocation to insure each job will not download a whole new set of images on a compute node. The images are referenced [here.](/frontera/src/wrapper.sh#L17) There is also specific [code](/frontera/src/get_port.py) that computes a unique port to be opened on a login node.  
+> This implementation is designed use hosted singularity images in the CIC service account's Stockyard allocation to insure each job will not download a whole new set of images on a compute node. The images are referenced [here.](/frontera/src/wrapper.sh#L13) There is also specific [code](/frontera/src/get_port.py) that computes a unique port to be opened on a login node.  
 
 ## Pre-requisites
 - Have an [Oauth client setup and generate a token.](https://tacc-cloud.readthedocs.io/projects/agave/en/latest/agave/introduction/tutorials.html#create-an-oauth-client)

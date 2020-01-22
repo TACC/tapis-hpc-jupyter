@@ -1,6 +1,5 @@
 #!/bin/bash
-SESSION_FILE="$STOCKYARD/delete_me_to_end_session"
-#SESSION_FILE="$HOME/delete_me_to_end_session"
+SESSION_FILE="$HOME/delete_me_to_end_session"
 
 # create password
 export PASSWORD=`date | md5sum | cut -c-32`
@@ -11,11 +10,7 @@ LOCAL_IPY_PORT=8888
 export XDG_RUNTIME_DIR="$STOCKYARD/jupyter"
 
 module load tacc-singularity/3.4.2
-# Attempt to launch the notebook in the user's $HOME directory
-ORIG_DIR=`pwd`
-cd $HOME
 nohup singularity run '/work/05747/cicsvc/frontera/public/tapis-hpc-jupyter-assets/jupyter.simg' &
-cd $ORIG_DIR
 
 # use ssh for port forwarding
 # echo Using ssh for port forwarding

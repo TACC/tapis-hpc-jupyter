@@ -6,8 +6,8 @@
   "description": "[USERNAME]'s Frontera Jupyter execution system",
   "site": "tacc.cloud",
   "executionType": "HPC",
-  "scratchDir": "/home1/05747/[USERNAME]/scratch",
-  "workDir": "/home1/05747/[USERNAME]/work",
+  "scratchDir": "/home1/[05747]/[USERNAME]/scratch",
+  "workDir": "/home1/[05747]/[USERNAME]/work",
   "login": {
     "host": "frontera.tacc.utexas.edu",
     "port": 22,
@@ -39,8 +39,8 @@
       "maxJobs": 1,
       "maxUserJobs": 1,
       "maxNodes": 1,
-      "maxMemoryPerNode": "2GB",
-      "maxProcessorsPerNode": 4,
+      "maxMemoryPerNode": "192GB",
+      "maxProcessorsPerNode": 56,
       "maxRequestedTime": "24:00:00",
       "customDirectives": "-A [ALLOCATION]",
       "default": true

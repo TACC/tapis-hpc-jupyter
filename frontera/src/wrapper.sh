@@ -10,7 +10,7 @@ LOCAL_IPY_PORT=8888
 export XDG_RUNTIME_DIR="$STOCKYARD/jupyter"
 
 module load tacc-singularity/3.4.2
-nohup singularity run '/work/05747/cicsvc/frontera/public/tapis-hpc-jupyter-assets/jupyter.simg' &
+nohup singularity run '/work/projects/wma_apps/frontera/tapis-hpc-jupyter-assets/jupyter.simg' &
 
 # use ssh for port forwarding
 # echo Using ssh for port forwarding
@@ -29,7 +29,7 @@ for i in `seq 5`; do
 done
 
 # send email notification
-echo Your notebook is now running at http://$NODE_HOSTNAME_DOMAIN:$LOGIN_IPY_PORT with password $PASSWORD | mailx -s "Jupyter notebook now running" ${email}
+echo Your notebook is now running at http://$NODE_HOSTNAME_DOMAIN:$LOGIN_IPY_PORT with password $PASSWORD | mailx -s "Launch your Frontera HPC Jupyter notebook session" ${email}
 
 # use file to kill job
 echo $NODE_HOSTNAME_LONG $IPYTHON_PID > $SESSION_FILE

@@ -10,6 +10,9 @@ RUN pip install pandas
 RUN pip install pillow
 RUN pip install jupyter
 
+USER root
+RUN apt-get update && apt-get install -y vim
+
 ###################################################################
 # Create jupyter user
 ###################################################################
@@ -51,10 +54,11 @@ COPY run_sing.sh /bin/run_sing.sh
 RUN chmod 755 /bin/run_sing.sh
 CMD ["/bin/run_sing.sh"]
 #RUN useradd -ms /bin/bash jupyter
-RUN chown -R jupyter ~/.jupyter
+RUN chown -R jupyter:65536 /home/jupyter
+RUN chmod -R 755 /home/jupyter
 #RUN cp /root/.jupyter/jupyter_notebook_config.py /home/jupyter/
 #RUN cp ~/.jupyter/jupyter_notebook_config.py /home/jupyter/
-RUN echo "\n\n# Set a password if PASSWORD is set\n\
+RUN printf "\n\n# Set a password if PASSWORD is set\n\
 import os\n\
 if 'PASSWORD' in os.environ:\n\
 \tfrom IPython.lib import passwd\n\

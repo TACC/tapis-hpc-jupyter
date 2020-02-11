@@ -2,7 +2,13 @@
 
 from tensorflow/tensorflow:1.13.1-gpu-py3
 
-RUN pip install sklearn torch keras matplotlib pandas jupyter
+RUN pip install sklearn
+RUN pip install torch
+RUN pip install keras
+RUN pip install matplotlib
+RUN pip install pandas
+RUN pip install pillow
+RUN pip install jupyter
 
 ###################################################################
 # Create jupyter user
@@ -36,4 +42,24 @@ ENV HOME=/home/jupyter \
 # Make primary group TACC_GID
 RUN usermod -g ${NB_GROUP} jupyter
 
+RUN mkdir /opt/notebooks
+RUN chmod 777 /opt/notebooks
+# run jupyter config gen
+RUN /usr/local/bin/jupyter notebook --generate-config
+ENV XDG_RUNTIME_DIR=""
+COPY run_sing.sh /bin/run_sing.sh
+RUN chmod 755 /bin/run_sing.sh
+CMD ["/bin/run_sing.sh"]
+#RUN useradd -ms /bin/bash jupyter
+RUN chown -R jupyter ~/.jupyter
+#RUN cp /root/.jupyter/jupyter_notebook_config.py /home/jupyter/
+#RUN cp ~/.jupyter/jupyter_notebook_config.py /home/jupyter/
+RUN echo "\n\n# Set a password if PASSWORD is set\n\
+import os\n\
+if 'PASSWORD' in os.environ:\n\
+\tfrom IPython.lib import passwd\n\
+\tc.NotebookApp.password = passwd(os.environ['PASSWORD'])\n\
+\tdel os.environ['PASSWORD']\n\n\
+c.NotebookApp.iopub_data_rate_limit=10000000\n" >> /home/jupyter/.jupyter/jupyter_notebook_config.py 
 
+USER jupyter

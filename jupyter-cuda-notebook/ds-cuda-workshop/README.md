@@ -17,3 +17,4 @@ python3:
   - import matplotlib
   - import numpy
   - import scipy
+  - from PIL import Image

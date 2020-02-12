@@ -41,7 +41,7 @@ ENV HOME=/home/jupyter \
     USER=jupyter \
     LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8
+    LANGUAGE=en_US.UTF-8 
 # Make primary group TACC_GID
 RUN usermod -g ${NB_GROUP} jupyter
 

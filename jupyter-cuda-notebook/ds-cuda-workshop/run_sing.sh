@@ -6,8 +6,11 @@
 #        echo "\n\nimport os\nc.NotebookApp.notebook_dir = './home'" >> $STOCKYARD/jupyter_notebook_config.py
 #fi
 cd ~/
-mkdir ./home
-cd ./home
-cp /home/jupyter/.jupyter/jupyter_notebook_config.py .
-printf "\n\nimport os\nc.NotebookApp.notebook_dir = \"$(pwd)\"" >> jupyter_notebook_config.py
+mkdir ./ds-cuda-workshop
+mkdir ./ds-cuda-workshop/${JOB_OWNER}
+cd ./ds-cuda-workshop/${JOB_OWNER}
+mkdir .config
+cp /home/jupyter/.jupyter/jupyter_notebook_config.py .config
+export JUPYTER_CONFIG_DIR=$(pwd)/.config
+printf "\n\nimport os\nc.NotebookApp.notebook_dir = \"$(pwd)/\"" >> .config/jupyter_notebook_config.py
 exec /usr/local/bin/jupyter notebook  --ip=0.0.0.0 --port=8888

@@ -1,8 +1,11 @@
 # Testing Instructions
 
 - Login to [DesignSafe](https://designsafe-ci.org)
-- Go to the Research Workbench, click on Workspace, then click on the My Apps tab.
-- Select Frontera HPC Jupyter
+- Go to the Research Workbench
+- Click on Workspace
+- Click on the Data Processing tab
+- Select Jupyter
+- In the dropdown, select Frontera HPC Jupyter
 - Enter your email address
 - Max job runtime (ex: `12:00:00`)
 - Click the Run button and an email from DesignSafe Apps should arrive a second or two after the job starts running.

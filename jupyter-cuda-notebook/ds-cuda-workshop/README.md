@@ -5,7 +5,7 @@
 - Click on Workspace
 - Click on the Data Processing tab
 - Select Jupyter
-- In the dropdown, select Frontera HPC Jupyter
+- In the dropdown, select TensorFlow Workshop - HPC Jupyter
 - Enter your email address
 - Max job runtime (ex: `12:00:00`)
 - Click the Run button and an email from DesignSafe Apps should arrive a second or two after the job starts running.

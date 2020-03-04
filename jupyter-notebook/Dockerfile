@@ -67,7 +67,9 @@ if 'PASSWORD' in os.environ:\n\
 \tfrom IPython.lib import passwd\n\
 \tc.NotebookApp.password = passwd(os.environ['PASSWORD'])\n\
 \tdel os.environ['PASSWORD']\n\n\
-c.NotebookApp.iopub_data_rate_limit=10000000\n" >> /home/jupyter/jupyter_notebook_config.py
+c.NotebookApp.iopub_data_rate_limit=10000000\n\
+c.NotebookApp.base_url = '/apps/jupyter/'+os.environ['LOGIN_IPY_PORT']+'/'\n\
+c.NotebookApp.webapp_settings = {'static_url_prefix':'/apps/jupyter/'+os.environ['LOGIN_IPY_PORT']+'/static/'}\n" >> /home/jupyter/jupyter_notebook_config.py
 
 USER jupyter
 

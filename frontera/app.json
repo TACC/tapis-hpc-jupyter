@@ -1,46 +1,48 @@
 {
-  "name": "[USERNAME]-tacc.prod-tapis-hpc-jupyter",
-  "version": "1.0",
-  "label": "[USERNAME]'s Frontera Jupyter HPC app",
-  "shortDescription": "[USERNAME]'s Frontera Jupyter HPC app",
-  "longDescription": "",
-  "tags": [],
-  "deploymentSystem": "[USERNAME].frontera.jupyter.storage",
-  "deploymentPath": "/work/05747/cicsvc/frontera/public/tapis-hpc-jupyter",
-  "templatePath": "wrapper.sh",
-  "testPath": "test/test.sh",
-  "executionSystem": "[USERNAME].frontera.jupyter.execution",
-  "executionType": "HPC",
-  "helpURI": "",
-  "parallelism": "SERIAL",
-  "inputs": [],
-   "parameters": [
-       {
-
-           "id": "email",
-           "value": {
-               "visible": true,
-               "required": true,
-               "type": "string",
-               "order": 0,
-               "enquote": false,
-               "validator": null
-           },
-           "details": {
-               "label": "User email",
-               "description": "User email",
-               "argument": "",
-               "showArgument": false,
-               "repeatArgument": false
-           },
-               "semantics": {
-               "minCardinality": 1,
-               "maxCardinality": 1,
-               "ontology": []
-           }
-    }
-],
-"outputs": []
-
+    "name": "frontera-hpc-jupyter",
+    "version": "1.0",
+    "label": "Frontera HPC Jupyter",
+    "shortDescription": "Frontera HPC Jupyter app",
+    "longDescription": "Launch an interactive Jupyter instance running on a Frontera compute node. Shortly after launching, an email will be sent to the specified address with a link and password to the session.<br><br>The session will end if the given Maximum Job Runtime is exceeded, or if the file <code>delete_me_to_end_session</code> is deleted from the root level directory of your session.",
+    "tags": [
+        "appCategory:Data Processing",
+        "appIcon:jupyter"
+    ],
+    "deploymentSystem": "frontera.storage.default",
+    "deploymentPath": "applications/frontera-hpc-jupyter",
+    "templatePath": "wrapper.sh",
+    "testPath": "test/test.sh",
+    "executionSystem": "frontera.community.exec.frontera",
+    "executionType": "HPC",
+    "helpURI": "https://jupyter-notebook.readthedocs.io/en/stable/notebook.html",
+    "parallelism": "SERIAL",
+    "inputs": [],
+    "parameters": [
+        {
+            "id": "email",
+            "value": {
+                "visible": true,
+                "required": true,
+                "type": "string",
+                "order": 0,
+                "enquote": false,
+                "validator": null
+            },
+            "details": {
+                "label": "User email",
+                "description": "The email where the connection details are sent to your interactive HPC Jupyter session on Frontera.",
+                "argument": "",
+                "showArgument": false,
+                "repeatArgument": false
+            },
+            "semantics": {
+                "minCardinality": 1,
+                "maxCardinality": 1,
+                "ontology": [
+                    "email"
+                ]
+            }
+        }
+    ],
+    "outputs": []
 }
-

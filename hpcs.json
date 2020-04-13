@@ -1,0 +1,24 @@
+{
+    "frontera": {
+        "x86": {
+            "START_RACK": 1,
+            "END_RACK": 91,
+
+            "START_CHASSIS": 0,
+            "END_CHASSIS": 21,
+
+            "START_NODE": 1,
+            "END_NODE": 4
+        },
+        "gpu": {
+            "START_RACK": 96,
+            "END_RACK": 99,
+
+            "START_CHASSIS": 1,
+            "END_CHASSIS": 12,
+
+            "START_NODE": 1,
+            "END_NODE": 2
+        }
+    }
+}

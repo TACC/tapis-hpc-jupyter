@@ -2,7 +2,7 @@
 Jupyter notebook Tapis apps for TACC HPCs
 
 NOTE:
-> This implementation is designed use hosted singularity images in the CIC service account's Stockyard allocation to insure each job will not download a whole new set of images on a compute node. The images are referenced [here.](/frontera/src/wrapper.sh#L13) There is also specific [code](/frontera/src/get_port.py) that computes a unique port to be opened on a login node.  
+> This implementation is designed use hosted singularity images in the CIC service account's Stockyard allocation to insure each job will not download a whole new set of images on a compute node. The images are referenced [here.](/frontera/src/wrapper.sh#L13) There is also specific [code](/get_port.py) that computes a unique port to be opened on a login node.  
 
 ## Pre-requisites
 - Have an [Oauth client setup and generate a token.](https://tacc-cloud.readthedocs.io/projects/agave/en/latest/agave/introduction/tutorials.html#create-an-oauth-client)
@@ -28,4 +28,19 @@ NOTE:
 
 
 ## Testing
-If on a system with a different configuration, it may be neccessary to alter the [get_port.py](/frontera/src/get_port.py) script.  The [port_tester.py](/frontera/src/port_tester.py) script can be updated to reflect the architecture then ran to make sure the necessary number of ports are accounted for.
+NOTE: 
+> If on a system with a different configuration, it may be neccessary to alter the [hpcs.json](/hpcs.json) script.
+
+Example testing frontera GPU for collisions: ```python3 get_port.py frontera gpu 45000 c196-112 -t```
+Output:
+```
+INFO: Test mode ignores compute_node argument
+c196-011 -> port: 45000
+c196-012 -> port: 45001
+c196-021 -> port: 45002
+...
+c199-112 -> port: 45093
+c199-121 -> port: 45094
+c199-122 -> port: 45095
+TEST: No port collisions detected!
+```
